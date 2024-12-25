@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subhas Hegde's- Portfolio</title>
+    <title>Subhas Hegde - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and base styles */
@@ -14,49 +14,27 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
+            background-color: #f4f4f4;
         }
 
-        /* Utility classes */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .btn { 
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
         /* Header styles */
         header {
-            background-color: rgba(52, 152, 219, 0.9);
+            background-color: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        header.scrolled {
-            background-color: rgba(52, 152, 219, 1);
         }
 
         nav {
@@ -82,39 +60,62 @@
         .nav-links a {
             color: #fff;
             text-decoration: none;
-            font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #ecf0f1;
+            color: #f4a261;
         }
 
         /* Hero section styles */
         #hero {
-            background: linear-gradient(135deg, #3498db, #8e44ad);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/placeholder.svg?height=600&width=1200') no-repeat center center/cover;
+            height: 100vh;
             color: #fff;
-            padding: 150px 0 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
         #hero h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
+            margin-bottom: 1rem;
         }
 
         #hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.2s;
-            animation-fill-mode: both;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f4a261;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e76f51;
+        }
+
+        /* Section styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         /* About section styles */
         #about {
-            padding: 100px 0;
-            background-color: #f9f9f9;
+            background-color: #fff;
         }
 
         .about-content {
@@ -125,73 +126,59 @@
 
         .about-text {
             flex: 1;
-            padding-right: 40px;
+            padding-right: 2rem;
         }
 
         .about-image {
             flex: 1;
-            text-align: center;
         }
 
         .about-image img {
             max-width: 100%;
             border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Skills section styles */
         #skills {
-            padding: 100px 0;
-            background-color: #fff;
+            background-color: #f4f4f4;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .skill-item {
+            background-color: #fff;
+            padding: 1.5rem;
             text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .skill-icon {
             font-size: 3rem;
-            margin-bottom: 15px;
-            color: #3498db;
+            margin-bottom: 1rem;
+            color: #f4a261;
         }
 
         /* Projects section styles */
         #projects {
-            padding: 100px 0;
-            background-color: #f9f9f9;
+            background-color: #fff;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .project-card {
-            background-color: #fff;
-            border-radius: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .project-image {
@@ -201,19 +188,17 @@
         }
 
         .project-info {
-            padding: 20px;
+            padding: 1.5rem;
         }
 
         .project-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #3498db;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Contact section styles */
         #contact {
-            padding: 100px 0;
-            background-color: #fff;
+            background-color: #f4f4f4;
         }
 
         .contact-form {
@@ -222,39 +207,36 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 1rem;
         }
 
         .form-group textarea {
             height: 150px;
-            resize: vertical;
         }
 
         /* Footer styles */
         footer {
-            background-color: #34495e;
+            background-color: #333;
             color: #fff;
-            padding: 40px 0;
             text-align: center;
+            padding: 2rem 0;
         }
 
         .social-links {
-            margin-top: 20px;
+            margin-top: 1rem;
         }
 
         .social-links a {
@@ -265,34 +247,23 @@
         }
 
         .social-links a:hover {
-            color: #3498db;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            color: #f4a261;
         }
 
         /* Responsive design */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .about-content {
                 flex-direction: column;
+                text-align: center;
             }
 
             .about-text {
                 padding-right: 0;
-                margin-bottom: 40px;
-            }
-
-            .nav-links {
-                display: none;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -314,7 +285,7 @@
         <section id="hero">
             <div class="container">
                 <h1>Welcome to My Portfolio</h1>
-                <p>I'm a Backend developer creating amazing digital experiences</p>
+                <p>I'm a passionate web developer creating amazing digital experiences</p>
                 <a href="#projects" class="btn">View My Work</a>
             </div>
         </section>
@@ -324,7 +295,7 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Hello! I'm a web developer with a passion for creating beautiful and functional websites. With expertise in HTML, CSS, JavaScript, and modern web technologies, I bring ideas to life in the digital world.</p>
+                        <p>Hello! I'm a developer with a passion for creating beautiful and functional websites. With expertise in HTML, CSS, Java, and modern web technologies, I bring ideas to life in the digital world.</p>
                         <p>My journey in web development has been driven by curiosity and a constant desire to learn. I thrive on challenges and enjoy finding innovative solutions to complex problems.</p>
                     </div>
                     <div class="about-image">
@@ -340,21 +311,22 @@
                 <div class="skills-grid">
                     <div class="skill-item">
                         <i class="skill-icon fab fa-html5"></i>
-                        <h3>HTML5</h3>
+                        <h3>HTML</h3>
                     </div>
                     <div class="skill-item">
                         <i class="skill-icon fab fa-css3-alt"></i>
-                        <h3>CSS3</h3>
+                        <h3>CSS</h3>
                     </div>
                     <div class="skill-item">
                         <i class="skill-icon fab fa-java"></i>
                         <h3>Java</h3>
-                         <div class="skill-item">
-                        <i class="skill-icon fab fa-python-alt"></i>
+                    </div>
+                    <div class="skill-item">
+                        <i class="skill-icon fab fa-py"></i>
                         <h3>Python</h3>
                     </div>
-                         <div class="skill-item">
-                        <i class="skill-icon fab fa-c-alt"></i>
+                    <div class="skill-item">
+                        <i class="skill-icon fab fa-c"></i>
                         <h3>C</h3>
                     </div>
                 </div>
@@ -435,16 +407,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
 
         // Form submission
